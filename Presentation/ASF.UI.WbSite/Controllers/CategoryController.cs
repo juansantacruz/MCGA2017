@@ -16,6 +16,7 @@ namespace ASF.UI.WbSite.Controllers
         {
             var cp = new CategoryProcess();
             var lista = DataCache.Instance.CategoryList();
+           
            // return View(cp.SelectList());
             return View(lista);
         }
@@ -29,6 +30,7 @@ namespace ASF.UI.WbSite.Controllers
         {
             var cp = new CategoryProcess();
             cp.insertCategory(category);
+            DataCache.Instance.CategoryListRemoveCache();
             return RedirectToAction("Index");
            
 

@@ -52,7 +52,16 @@ namespace ASF.UI.WbSite.Services.Cache
                 },
                 DataCacheSetting.Category.SlidingExpiration);
             return lista;
+
+           // _cacheService.Remove(DataCacheSetting.Category.Key);
         }
+
+        public void CategoryListRemoveCache()
+        {
+            _cacheService.Remove(DataCacheSetting.Category.Key);
+
+        }
+      
 
     }
 
