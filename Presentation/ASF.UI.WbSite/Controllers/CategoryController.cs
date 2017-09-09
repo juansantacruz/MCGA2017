@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ASF.UI.Process;
 using ASF.Entities;
+using ASF.UI.WbSite.Services.Cache;
 
 namespace ASF.UI.WbSite.Controllers
 {
@@ -27,6 +28,8 @@ namespace ASF.UI.WbSite.Controllers
             var cp = new CategoryProcess();
             cp.insertCategory(category);
             return RedirectToAction("Index");
+           
+
         }
 
         public ActionResult Edit(int id)
