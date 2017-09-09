@@ -237,6 +237,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\DataCacheSetting.cs" />
     <Compile Include="Constants\ExtensionMethods\HtmlLabelExtensions.cs" />
     <Compile Include="Constants\ExtensionMethods\TypeFactory.cs" />
     <Compile Include="Constants\ExtensionMethods\WebGridExtensions.cs" />
