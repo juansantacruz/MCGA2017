@@ -15,7 +15,9 @@ namespace ASF.UI.WbSite.Controllers
         public ActionResult Index()
         {
             var cp = new CategoryProcess();
-            return View(cp.SelectList());
+            var lista = DataCache.Instance.CategoryList();
+           // return View(cp.SelectList());
+            return View(lista);
         }
 
         public ActionResult Create()
