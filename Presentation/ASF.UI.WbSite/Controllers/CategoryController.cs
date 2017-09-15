@@ -30,7 +30,7 @@ namespace ASF.UI.WbSite.Controllers
         {
             var cp = new CategoryProcess();
             cp.insertCategory(category);
-            DataCache.Instance.CategoryListRemoveCache();
+            DataCache.Instance.CategoryListRemove();
             return RedirectToAction("Index");
            
 

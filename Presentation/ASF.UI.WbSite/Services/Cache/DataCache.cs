@@ -1,18 +1,19 @@
-﻿using System;
+﻿//using Glimpse.Mvc.AlternateType;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ASF.UI.WbSite.Constants;
 using System.Web.Mvc;
 using ASF.Entities;
+using ASF.UI.WbSite.Constants;
 using ASF.UI.Process;
 
 namespace ASF.UI.WbSite.Services.Cache
 {
     public class DataCache
     {
-        #region Singleton
+        #region singleton
         private static DataCache _instance;
         private static readonly object InstanceLock = new object();
         public static DataCache Instance
@@ -23,27 +24,25 @@ namespace ASF.UI.WbSite.Services.Cache
                 {
                     lock (InstanceLock)
                     {
-                        if (_instance == null)
-                        {
-                            _instance = new DataCache();
-                        }
+                        _instance = new DataCache();
                     }
                 }
                 return _instance;
             }
-            
         }
         #endregion
 
-        private readonly ICacheService _cacheService;
+        private readonly ICacheService _cacheServices;
         private DataCache()
         {
-            _cacheService = DependencyResolver.Current.GetService<ICacheService>();
+            _cacheServices = DependencyResolver.Current.GetService<ICacheService>();
         }
 
         public List<Category> CategoryList()
         {
-            var lista = _cacheService.GetOrAdd(
+            _cacheServices.Remove(DataCacheSetting.Category.Key);
+
+            var lista = _cacheServices.GetOrAdd(
                 DataCacheSetting.Category.Key,
                 () =>
                 {
@@ -53,16 +52,22 @@ namespace ASF.UI.WbSite.Services.Cache
                 DataCacheSetting.Category.SlidingExpiration);
             return lista;
 
-           // _cacheService.Remove(DataCacheSetting.Category.Key);
         }
 
-        public void CategoryListRemoveCache()
+        public void CategoryListRemove()
         {
-            _cacheService.Remove(DataCacheSetting.Category.Key);
+            _cacheServices.Remove(DataCacheSetting.Category.Key);
+
+            var lista = _cacheServices.GetOrAdd(
+                DataCacheSetting.Category.Key,
+                () =>
+                {
+                    var cp = new CategoryProcess();
+                    return cp.SelectList();
+                },
+                DataCacheSetting.Category.SlidingExpiration);
+            //return lista;
 
         }
-      
-
     }
-
 }
