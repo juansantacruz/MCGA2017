@@ -19,7 +19,10 @@ namespace ASF.Services.Contracts
     public class AllResponse
     {
         [DataMember]
-        public List<Category> Result { get; set; }
+        public List<Category> ResultCategory { get; set; }
+
+        [DataMember]
+        public List<Country> ResultCountry { get; set; }
     }
 }
 
