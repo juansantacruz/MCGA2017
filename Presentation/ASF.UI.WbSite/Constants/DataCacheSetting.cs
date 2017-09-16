@@ -12,5 +12,12 @@ namespace ASF.UI.WbSite.Constants
             public const string Key = "Category";
             public static readonly TimeSpan SlidingExpiration = TimeSpan.FromHours(1);
         }
+
+
+        public static class Country
+        {
+            public const string Key = "Country";
+            public static readonly TimeSpan SlidingExpiration = TimeSpan.FromHours(1);
+        }
     }
 }
