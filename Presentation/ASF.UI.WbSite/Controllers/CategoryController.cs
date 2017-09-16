@@ -17,7 +17,7 @@ namespace ASF.UI.WbSite.Controllers
             var cp = new CategoryProcess();
             var lista = DataCache.Instance.CategoryList();
            
-           // return View(cp.SelectList());
+           //return View(cp.SelectList());
             return View(lista);
         }
 
