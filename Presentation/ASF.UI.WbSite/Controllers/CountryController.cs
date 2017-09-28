@@ -14,7 +14,7 @@ namespace ASF.UI.WbSite.Controllers
         // GET: Country
         public ActionResult Index()
         {
-            var cp = new CountryProcess();
+            //var cp = new CountryProcess();
             var lista = DataCache.Instance.CountryList();
             //return View(cp.SelectList());
             return View(lista);
@@ -68,6 +68,7 @@ namespace ASF.UI.WbSite.Controllers
             {
                 var cp = new CountryProcess();
                 cp.editCountry(country);
+                DataCache.Instance.CountryListRemove();
                 return RedirectToAction("Index");
             }
             catch
@@ -92,6 +93,7 @@ namespace ASF.UI.WbSite.Controllers
             {
                 var cp = new CountryProcess();
                 cp.deleteCountry(id);
+                DataCache.Instance.CountryListRemove();
                 return RedirectToAction("Index");
             }
             catch
