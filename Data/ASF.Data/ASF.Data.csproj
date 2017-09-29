@@ -50,6 +50,7 @@
     <Compile Include="CountryDAC.cs" />
     <Compile Include="CategoryDAC.cs" />
     <Compile Include="DataAccessComponent.cs" />
+    <Compile Include="DealerDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

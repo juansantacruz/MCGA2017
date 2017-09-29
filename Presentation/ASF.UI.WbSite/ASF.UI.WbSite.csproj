@@ -258,6 +258,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DealerController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -552,6 +553,11 @@
     <Content Include="Views\Country\Create.cshtml" />
     <Content Include="Views\Country\Delete.cshtml" />
     <Content Include="Views\Country\Edit.cshtml" />
+    <Content Include="Views\Dealer\Create.cshtml" />
+    <Content Include="Views\Dealer\Details.cshtml" />
+    <Content Include="Views\Dealer\Delete.cshtml" />
+    <Content Include="Views\Dealer\Index.cshtml" />
+    <Content Include="Views\Dealer\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

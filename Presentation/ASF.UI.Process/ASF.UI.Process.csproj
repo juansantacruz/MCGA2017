@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="CountryProcess.cs" />
     <Compile Include="CategoryProcess.cs" />
+    <Compile Include="DealerProcess.cs" />
     <Compile Include="MediaType.cs" />
     <Compile Include="ProcessComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

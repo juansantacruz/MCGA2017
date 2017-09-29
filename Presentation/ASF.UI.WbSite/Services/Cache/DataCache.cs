@@ -103,8 +103,41 @@ namespace ASF.UI.WbSite.Services.Cache
                 },
                 DataCacheSetting.Country.SlidingExpiration);
         }
+
+        //////
+        ///////
+        public List<Dealer> DealerList()
+        {
+            //_cacheServices.Remove(DataCacheSetting.Dealer.Key);
+
+            var lista = _cacheServices.GetOrAdd(
+                DataCacheSetting.Dealer.Key,
+                () =>
+                {
+                    var cp = new DealerProcess();
+                    return cp.SelectList();
+                },
+                DataCacheSetting.Dealer.SlidingExpiration);
+            return lista;
+
+        }
+
+        public void DealerListRemove()
+        {
+            _cacheServices.Remove(DataCacheSetting.Dealer.Key);
+
+            var lista = _cacheServices.GetOrAdd(
+                DataCacheSetting.Dealer.Key,
+                () =>
+                {
+                    var cp = new DealerProcess();
+                    return cp.SelectList();
+                },
+                DataCacheSetting.Dealer.SlidingExpiration);
+        }
     }
 
     //////
+    /////////
 }
 
