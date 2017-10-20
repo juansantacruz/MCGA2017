@@ -135,9 +135,49 @@ namespace ASF.UI.WbSite.Services.Cache
                 },
                 DataCacheSetting.Dealer.SlidingExpiration);
         }
+
+
+
+        //////
+        /////////
+
+        //////CLIENT
+        public List<Client> ClientList()
+        {
+            // _cacheServices.Remove(DataCacheSetting.Country.Key);
+
+            var lista = _cacheServices.GetOrAdd(
+                DataCacheSetting.Client.Key,
+                () =>
+                {
+                    var cp = new ClientProcess();
+                    return cp.SelectList();
+                },
+                DataCacheSetting.Client.SlidingExpiration);
+            return lista;
+
+        }
+
+        public void ClientListRemove()
+        {
+            _cacheServices.Remove(DataCacheSetting.Client.Key);
+
+            var lista = _cacheServices.GetOrAdd(
+                DataCacheSetting.Client.Key,
+                () =>
+                {
+                    var cp = new ClientProcess();
+                    return cp.SelectList();
+                },
+                DataCacheSetting.Client.SlidingExpiration);
+        }
+
+        //////
+
+
     }
 
-    //////
-    /////////
+
+
 }
 
