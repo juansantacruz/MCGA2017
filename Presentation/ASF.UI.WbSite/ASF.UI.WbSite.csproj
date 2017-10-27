@@ -277,6 +277,7 @@
     <Compile Include="Services\Cache\DataCache.cs" />
     <Compile Include="Services\Cache\ICacheService.cs" />
     <Compile Include="Services\ExtensionMethods\Extensions.cs" />
+    <Compile Include="Services\ExtensionMethods\HtmlLabelExtensions.cs" />
     <Compile Include="Services\Logging\ILoggingService.cs" />
     <Compile Include="Services\Logging\LoggingService.cs" />
     <Compile Include="Services\Manifest\IManifestService.cs" />
