@@ -58,6 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Localization\Kernel\Common\Attributes\DescriptionAttribute.cs" />
+    <Compile Include="Localization\Kernel\Common\Attributes\DisplayNameAttribute.cs" />
+    <Compile Include="Localization\Kernel\Common\Attributes\FilePathAttribute.cs" />
+    <Compile Include="Localization\Kernel\Common\Attributes\IdAttribute.cs" />
+    <Compile Include="Localization\Kernel\Common\Attributes\ImageAttribute.cs" />
+    <Compile Include="Localization\Kernel\Common\Attributes\NameAttribute.cs" />
+    <Compile Include="Localization\Kernel\Common\LinqKit\ExpandableQuery.cs" />
+    <Compile Include="Localization\Kernel\Common\LinqKit\ExpressionExpander.cs" />
+    <Compile Include="Localization\Kernel\Common\LinqKit\ExpressionVisitor.cs" />
+    <Compile Include="Localization\Kernel\Common\LinqKit\Extensions.cs" />
     <Compile Include="Utilities\BotUtils.cs" />
     <Compile Include="Utilities\CensorUtils.cs" />
     <Compile Include="Utilities\ConfigUtils.cs" />
@@ -77,6 +87,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Localization\Model\" />
+    <Folder Include="Localization\SiteConfig\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

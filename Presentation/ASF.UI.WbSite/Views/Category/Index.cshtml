@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ASF.Entities.Category>
+﻿@using App.UI.Web.Application.ExtensionMethods
+@model IEnumerable<ASF.Entities.Category>
 
 @{
     ViewBag.Title = "Index";
@@ -55,3 +56,5 @@
 }
 
 </table>
+
+<span>data: @Html.LanguageString("Members.Register")</span>

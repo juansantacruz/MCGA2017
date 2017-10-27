@@ -6,12 +6,21 @@ using System.Web.Mvc;
 using ASF.UI.Process;
 using ASF.Entities;
 using ASF.UI.WbSite.Services.Cache;
-
+using ASF.Framework.Localization.Kernel.Interfaces.Services.UnitOfWork;
+using ASF.Framework.Localization.Kernel.Interfaces.Services;
 
 namespace ASF.UI.WbSite.Controllers
 {
     public class CategoryController : Controller
     {
+
+        //public CategoryController(IUnitOfWorkManager unitOfWorkManager,
+        //ILocalizationService localizationService,
+        //ISettingsService settingsService)
+        //{
+
+        //}
+
         // GET: Category
         public ActionResult Index()
         {

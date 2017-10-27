@@ -276,6 +276,7 @@
     <Compile Include="Services\Cache\CacheService.cs" />
     <Compile Include="Services\Cache\DataCache.cs" />
     <Compile Include="Services\Cache\ICacheService.cs" />
+    <Compile Include="Services\ExtensionMethods\Extensions.cs" />
     <Compile Include="Services\Logging\ILoggingService.cs" />
     <Compile Include="Services\Logging\LoggingService.cs" />
     <Compile Include="Services\Manifest\IManifestService.cs" />
@@ -573,6 +574,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\LeatherGoods-Security\Shared\ASF.Framework\ASF.Framework.csproj">
+      <Project>{85fd26ed-ca34-4c55-9459-cd5b8700c9e2}</Project>
+      <Name>ASF.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Shared\ASF.Entities\ASF.Entities.csproj">
       <Project>{5f7c08e8-891e-41c7-9e8d-e94b75222c0b}</Project>
       <Name>ASF.Entities</Name>
