@@ -310,6 +310,48 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bell\css\bootstrap.min.css" />
+    <Content Include="Bell\css\font-awesome.min.css" />
+    <Content Include="Bell\css\main.css" />
+    <Content Include="Bell\css\normalize.css" />
+    <Content Include="Bell\css\owl.carousel.css" />
+    <Content Include="Bell\css\responsive.css" />
+    <Content Include="Bell\css\style.css" />
+    <Content Include="Bell\fonts\fontawesome-webfont.svg" />
+    <Content Include="Bell\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Bell\img\admin.jpg" />
+    <Content Include="Bell\img\basic.jpg" />
+    <Content Include="Bell\img\blg.jpg" />
+    <Content Include="Bell\img\blog.jpg" />
+    <Content Include="Bell\img\extended.jpg" />
+    <Content Include="Bell\img\flckr.jpg" />
+    <Content Include="Bell\img\happy_client.png" />
+    <Content Include="Bell\img\logo.png" />
+    <Content Include="Bell\img\logo2.png" />
+    <Content Include="Bell\img\map-marker.png" />
+    <Content Include="Bell\img\pt_1.jpg" />
+    <Content Include="Bell\img\pt_2.jpg" />
+    <Content Include="Bell\img\pt_3.jpg" />
+    <Content Include="Bell\img\slider2.jpg" />
+    <Content Include="Bell\img\standar.jpg" />
+    <Content Include="Bell\img\team_1.jpg" />
+    <Content Include="Bell\img\testimonial_bg.jpg" />
+    <Content Include="Bell\js\appear.js" />
+    <Content Include="Bell\js\bootstrap.min.js" />
+    <Content Include="Bell\js\html5shiv.js" />
+    <Content Include="Bell\js\isotope.pkgd.min.js" />
+    <Content Include="Bell\js\jquery-1.11.3.min.js" />
+    <Content Include="Bell\js\jquery.counterup.min.js" />
+    <Content Include="Bell\js\jquery.easing.min.js" />
+    <Content Include="Bell\js\jquery.nicescroll.min.js" />
+    <Content Include="Bell\js\main.js" />
+    <Content Include="Bell\js\owl.carousel.min.js" />
+    <Content Include="Bell\js\plugins.js" />
+    <Content Include="Bell\js\scrolling-nav.js" />
+    <Content Include="Bell\js\showHide.js" />
+    <Content Include="Bell\js\vendor\jquery-1.11.3.min.js" />
+    <Content Include="Bell\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Bell\js\waypoints.min.js" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -417,6 +459,16 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Bell\fonts\fontawesome-webfont.eot" />
+    <Content Include="Bell\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Bell\fonts\fontawesome-webfont.woff" />
+    <Content Include="Bell\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Bell\fonts\FontAwesome.otf" />
+    <Content Include="Bell\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Bell\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Bell\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Bell\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Bell\img\.gitignore" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -584,10 +636,11 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Cart\agregarCarrito.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copia.cshtml" />
+    <Content Include="Views\Home\Index - Copia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Bell\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

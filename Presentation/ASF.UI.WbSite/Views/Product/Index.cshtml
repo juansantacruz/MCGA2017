@@ -3,6 +3,9 @@
     ViewBag.Title = "Products list";
 }
 @*@Html.Partial("_Espacio1")*@
+<div id="main" class="container body-content" role="main">
+    <br /><br /><br /><br /><br /><br />
+</div>
 <h2>Product list</h2><br />
 <i class="fa fa-shopping-cart fa-3x" style="float:right; padding-right:50px" aria-hidden="true"></i>
 <hr style="clear:both" />
@@ -98,7 +101,9 @@
 
     <div class="col-sm-3 ">
         <div class="thumbnail">
-            <img src="~/Views/Product/img_product/Zapatillas1.jpg" />
+            @*<img src="~/Views/Product/img_product/Zapatillas1.jpg" />*@
+            <img src="https://http2.mlstatic.com/S_607138-MLA25676987464_062017-O.jpg" alt="...">
+
             <div class="caption">
                 <h5 id="nombre">@Html.DisplayFor(modelItem => item.Title)</h5>
                 <p id="precio">@Html.DisplayFor(modelItem => item.Description)</p>
