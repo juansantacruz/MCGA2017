@@ -53,6 +53,7 @@
     <Compile Include="DataAccessComponent.cs" />
     <Compile Include="DealerDAC.cs" />
     <Compile Include="OrderDAC.cs" />
+    <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

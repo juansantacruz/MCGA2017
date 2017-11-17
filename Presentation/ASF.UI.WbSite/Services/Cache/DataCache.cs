@@ -174,7 +174,35 @@ namespace ASF.UI.WbSite.Services.Cache
 
         //////
 
+        public List<Product> ProductList()
+        {
+            //_cacheServices.Remove(DataCacheSetting.Product.Key);
 
+            var lista = _cacheServices.GetOrAdd(
+                DataCacheSetting.Product.Key,
+                () =>
+                {
+                    var cp = new ProductProcess();
+                    return cp.SelectList();
+                },
+                DataCacheSetting.Product.SlidingExpiration);
+            return lista;
+
+        }
+
+        public void ProductListRemove()
+        {
+            _cacheServices.Remove(DataCacheSetting.Product.Key);
+
+            var lista = _cacheServices.GetOrAdd(
+                DataCacheSetting.Product.Key,
+                () =>
+                {
+                    var cp = new ProductProcess();
+                    return cp.SelectList();
+                },
+                DataCacheSetting.Product.SlidingExpiration);
+        }
     }
 
 
