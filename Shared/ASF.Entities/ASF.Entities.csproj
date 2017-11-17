@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Cart.cs" />
     <Compile Include="CartItem.cs" />
+    <Compile Include="CartItemDTO.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Country.cs" />
