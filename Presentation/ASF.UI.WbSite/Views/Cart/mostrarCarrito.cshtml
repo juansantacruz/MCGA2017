@@ -1,0 +1,107 @@
+﻿@*@model IEnumerable<ASF.Entities.CartItem>*@
+
+@{
+    ViewBag.Title = "Mi carrito";
+}
+
+<div id="main" class="container body-content" role="main">
+    <br /><br /><br /><br /><br /><br />
+</div>
+<h2>Product list</h2><br />
+<i class="fa fa-shopping-cart fa-3x" style="float:right; padding-right:50px" aria-hidden="true"></i>
+<hr style="clear:both" />
+
+<h2>Mi carrito</h2><br />
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+                @Html.DisplayName("Cart Id")
+            </th>
+            <th>
+                @Html.DisplayName("Product Id")
+            </th>*@
+        <th>
+            @Html.DisplayName("Title")
+        </th>
+        <th>
+            @Html.DisplayName("Quantity")
+        </th>
+        <th>
+            @Html.DisplayName("Price")
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChangedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChangedBy)
+            </th>*@
+        <th></th>
+    </tr>
+    @{
+        double total = 0;
+    }
+    @if (Session["Carrito"] != null)
+    {
+        foreach (var item in Session["Carrito"] as List<ASF.Entities.CartItemDTO>)
+        {
+            total += (double)(item.Price * item.Quantity);
+            <tr>
+                @*<td>
+                         @Html.DisplayFor(modelItem => item.CartId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChangedOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChangedBy)
+                    </td>*@
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+                </td>
+            </tr>
+        }
+        <tr>
+            <th colspan="2">
+                @Html.DisplayName("Total")
+            </th>
+            <th>
+                @Html.DisplayName(total.ToString())
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Go to product list", "Index", "Product")
+

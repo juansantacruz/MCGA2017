@@ -638,6 +638,7 @@
     <Content Include="Views\Cart\agregarCarrito.cshtml" />
     <Content Include="Views\Shared\_Layout - Copia.cshtml" />
     <Content Include="Views\Home\Index - Copia.cshtml" />
+    <Content Include="Views\Cart\mostrarCarrito.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
