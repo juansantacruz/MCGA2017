@@ -32,10 +32,14 @@ namespace ASF.Data
                 db.AddInParameter(cmd, "@SignupDate", DbType.DateTime, Client.SignupDate);
                 db.AddInParameter(cmd, "@Rowid", DbType.Guid, Client.Rowid);
                 db.AddInParameter(cmd, "@OrderCount", DbType.Int32, Client.OrderCount);
-                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, Client.CreatedOn);
-                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, Client.CreatedBy);
-                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, Client.ChangedOn);
-                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, Client.ChangedBy);
+                //db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, Client.CreatedOn);
+                //db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, Client.CreatedBy);
+                //db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, Client.ChangedOn);
+                //db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, Client.ChangedBy);
+                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, 1);
+                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, 1);
                 // Obtener el valor de la primary key.
                 Client.Id = Convert.ToInt32(db.ExecuteScalar(cmd));
             }

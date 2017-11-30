@@ -49,10 +49,14 @@ namespace ASF.Data
                 db.AddInParameter(cmd, "@OrderNumber", DbType.Int32, Order.OrderNumber);
                 db.AddInParameter(cmd, "@ItemCount", DbType.Int32, Order.ItemCount);
                 db.AddInParameter(cmd, "@Rowid", DbType.Guid, Order.Rowid);
-                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, Order.CreatedOn);
-                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, Order.CreatedBy);
-                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, Order.ChangedOn);
-                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, Order.ChangedBy);
+                //db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, Order.CreatedOn);
+                //db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, Order.CreatedBy);
+                //db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, Order.ChangedOn);
+                //db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, Order.ChangedBy);
+                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, 1);
+                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, 1);
 
 
                 // Obtener el valor de la primary key.

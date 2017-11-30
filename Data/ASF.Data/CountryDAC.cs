@@ -27,10 +27,14 @@ namespace ASF.Data
             using (var cmd = db.GetSqlStringCommand(sqlStatement))
             {
                 db.AddInParameter(cmd, "@Name", DbType.String, Country.Name);
-                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, Country.CreatedOn);
-                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, Country.CreatedBy);
-                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, Country.ChangedOn);
-                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, Country.ChangedBy);
+                //db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, Country.CreatedOn);
+                //db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, Country.CreatedBy);
+                //db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, Country.ChangedOn);
+                //db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, Country.ChangedBy);
+                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, 1);
+                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, 1);
                 // Obtener el valor de la primary key.
                 Country.Id = Convert.ToInt32(db.ExecuteScalar(cmd));
             }

@@ -27,10 +27,14 @@ namespace ASF.Data
                 db.AddInParameter(cmd, "@QuantitySold", DbType.Int32, product.QuantitySold);
                 db.AddInParameter(cmd, "@AvgStars", DbType.Double, product.AvgStars);
                 db.AddInParameter(cmd, "@Rowid", DbType.Guid, product.Rowid);
-                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, product.CreatedOn);
-                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, product.CreatedBy);
-                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, product.ChangedOn);
-                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, product.ChangedBy);
+                //db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, product.CreatedOn);
+                //db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, product.CreatedBy);
+                //db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, product.ChangedOn);
+                //db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, product.ChangedBy);
+                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, 1);
+                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, 1);
                 // Obtener el valor de la primary key.
                 product.Id = Convert.ToInt32(db.ExecuteScalar(cmd));
             }
