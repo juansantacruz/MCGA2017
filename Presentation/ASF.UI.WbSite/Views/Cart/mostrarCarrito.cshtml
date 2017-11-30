@@ -104,4 +104,6 @@
     }
 </table>
 @Html.ActionLink("Go to product list", "Index", "Product")
-
+<div style="float:right">
+@Html.ActionLink("Buy cart", "finalizarCompra", "Cart", null, new { @class = "btn btn-primary" })
+</div>

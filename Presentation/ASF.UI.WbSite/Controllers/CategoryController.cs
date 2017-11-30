@@ -11,6 +11,7 @@ using ASF.Framework.Localization.Kernel.Interfaces.Services;
 
 namespace ASF.UI.WbSite.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
 

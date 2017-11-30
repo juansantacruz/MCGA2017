@@ -97,4 +97,9 @@
     }
 </table>
 @Html.ActionLink("Go to product list", "Index", "Product")
+        <div class="row">
+                <div class="col-lg-4" style="float:right">
+                           @Html.ActionLink("Buy cart", "finalizarCompra", "Cart", null, new { @class = "btn btn-primary" })       
+    </div>   
+</div>
 @*@Html.Partial("_Espacio2")*@

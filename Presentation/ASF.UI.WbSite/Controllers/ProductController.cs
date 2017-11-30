@@ -9,6 +9,7 @@ using ASF.UI.WbSite.Services.Cache;
 
 namespace ASF.UI.WbSite.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         // GET: Product

@@ -140,5 +140,33 @@ namespace ASF.UI.WbSite.Controllers
                 return View();
             }
         }
+
+        public ActionResult finalizarCompra()
+        {
+            List<CartItemDTO> compras = (List<CartItemDTO>)Session["Carrito"];
+
+            if (compras != null && compras.Count > 0)
+            {
+                //CartItem cartitem = new CartItem();
+                //List<CartItem> listcartitem = new List<CartItem>();
+
+                foreach (var item in compras)
+                {
+                    //cartitem.ProductId = item.ProductId;
+                    //cartitem.Quantity = item.Quantity;
+                    //cartitem.Price = item.Price;
+
+                    //listcartitem.Add(cartitem);
+                    //CartProcess cp = new CartProcess();
+                    //cp.insertCartItemDTO(item);
+                }
+                Session.RemoveAll();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Product");
+            }
+        }
     }
 }

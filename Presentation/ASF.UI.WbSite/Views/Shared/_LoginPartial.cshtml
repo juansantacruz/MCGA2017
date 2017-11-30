@@ -5,9 +5,10 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-left">
             <li>
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", new { Area = "" }, htmlAttributes: new { title = "Manage" })
+                @*Session.RemoveAll();*@
             </li>
             <li>
                 @Html.ActionLink("LogOff ", "LogOff", "Account", new { Area = "" }, htmlAttributes: new { title = "LogOff" })

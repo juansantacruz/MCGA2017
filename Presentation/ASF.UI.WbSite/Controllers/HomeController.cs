@@ -20,6 +20,7 @@ namespace ASF.UI.WbSite.Controllers
     using ASF.UI.WbSite.Constants;
     using ASF.UI.WbSite.Services;
 
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         #region Fields

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ASF.Entities.Product>
+﻿@using App.UI.Web.Application.ExtensionMethods
+@model IEnumerable<ASF.Entities.Product>
 @{
     ViewBag.Title = "Products list";
 }
@@ -21,7 +22,13 @@
     <h2>Lista de Productos</h2><br />
     @*<i class="fa fa-shopping-cart fa-3x" style="float:right; padding-right:50px" aria-hidden="true"></i>*@
 
-
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    
+}  
 
 
     <br /><br />
@@ -72,64 +79,29 @@
             </tr>*@
     @foreach (var item in Model)
     {
-        @*<tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DealerId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.QuantitySold)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AvgStars)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rowid)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ChangedOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ChangedBy)
-                </td>
-                <td>
-                    @Html.ActionLink("Agregar", "agregarCarrito", "Cart", new { id=item.Id}, null)
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-                </td>
-            </tr>*@
+       
 
         <div class="col-sm-3 ">
             <div class="thumbnail">
                 @*<img src="~/Views/Product/img_product/Zapatillas1.jpg" />*@
-                <img src="https://http2.mlstatic.com/S_607138-MLA25676987464_062017-O.jpg" alt="...">
-
+                @*<img src="https://http2.mlstatic.com/S_607138-MLA25676987464_062017-O.jpg" alt="...">*@
+                <img class="img-thumbnail" src=@Url.Content("~/img_product/" + item.Image) alt="" />
                 <div class="caption">
                     <h5 id="nombre">@Html.DisplayFor(modelItem => item.Title)</h5>
                     <p id="precio">@Html.DisplayFor(modelItem => item.Description)</p>
                     <p id="precio"> $ @Html.DisplayFor(modelItem => item.Price)</p>
                     <p>@Html.ActionLink("Agregar a carrito", "agregarCarrito", "Cart", new { id = item.Id }, new { @class = "btn btn-primary" }) @Html.ActionLink("Leer más", "Details", new { id = item.Id }) </p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+                     }
+                </div>
+
                 </div>
             </div>
-        </div>
+        
+
     }
     @*</table>*@
     @*@Html.Partial("_Espacio2")*@

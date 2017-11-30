@@ -55,9 +55,21 @@
                                     <ul>
                                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                                         <li>@Html.ActionLink("Shop", "Index", "Product")</li>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li>@Html.ActionLink("Dealer", "Index", "Dealer")</li>
+                                        } 
                                         <li><a class="page-scroll" href="#abt_sec">About</a></li>
                                         <li><a class="page-scroll" href="#ctn_sec">Contact Us</a></li>
+                                    
                                     </ul>
+                                    @Html.Partial("_LoginPartial")
+                                    @*<ul class="nav navbar-nav navbar-left">
+                                        <li>
+                                            @Html.Partial("_LoginPartial")
+                                        </li>                                      
+                                    </ul>*@
+                                    
                                 </div>
                             </nav>
                         </div>
