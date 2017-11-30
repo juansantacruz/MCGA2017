@@ -483,6 +483,7 @@
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\lgwebsite.pubxml" />
     <None Include="ReadMe.html" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Content\bootstrap\site.css">
@@ -547,6 +548,11 @@
     </Content>
     <None Include="Content\Site.less" />
     <Content Include="humans.txt" />
+    <Content Include="img_product\Campera.jpg" />
+    <Content Include="img_product\CamperaAdidasMujer.jpg" />
+    <Content Include="img_product\CamperaAdidasZNE.jpg" />
+    <Content Include="img_product\CamperaEcoCuero.jpg" />
+    <Content Include="img_product\Camperaperseus.jpg" />
     <Content Include="Nota-Estado.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

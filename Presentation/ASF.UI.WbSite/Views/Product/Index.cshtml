@@ -87,6 +87,7 @@
                 @*<img src="https://http2.mlstatic.com/S_607138-MLA25676987464_062017-O.jpg" alt="...">*@
                 <img class="img-thumbnail" src=@Url.Content("~/img_product/" + item.Image) alt="" />
                 <div class="caption">
+                    
                     <h5 id="nombre">@Html.DisplayFor(modelItem => item.Title)</h5>
                     <p id="precio">@Html.DisplayFor(modelItem => item.Description)</p>
                     <p id="precio"> $ @Html.DisplayFor(modelItem => item.Price)</p>
