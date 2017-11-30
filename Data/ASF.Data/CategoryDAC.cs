@@ -36,11 +36,16 @@ namespace ASF.Data
             var db = DatabaseFactory.CreateDatabase(ConnectionName);
             using (var cmd = db.GetSqlStringCommand(sqlStatement))
             {
+                //db.AddInParameter(cmd, "@Name", DbType.String, category.Name);
+                //db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, category.CreatedOn);
+                //db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, category.CreatedBy);
+                //db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, category.ChangedOn);
+                //db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, category.ChangedBy);
                 db.AddInParameter(cmd, "@Name", DbType.String, category.Name);
-                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, category.CreatedOn);
-                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, category.CreatedBy);
-                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, category.ChangedOn);
-                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, category.ChangedBy);
+                db.AddInParameter(cmd, "@CreatedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, 1);
+                db.AddInParameter(cmd, "@ChangedOn", DbType.DateTime2, DateTime.Now);
+                db.AddInParameter(cmd, "@ChangedBy", DbType.Int32, 1);
                 // Obtener el valor de la primary key.
                 category.Id = Convert.ToInt32(db.ExecuteScalar(cmd));
             }
