@@ -14,7 +14,7 @@
             AddSearchEngineOptimizationFilters(filters);
             AddSecurityFilters(filters);
             AddContentSecurityPolicyFilters(filters);
-            filters.Add(new System.Web.Mvc.AuthorizeAttribute());
+            //filters.Add(new System.Web.Mvc.AuthorizeAttribute());
         }
 
         /// <summary>
