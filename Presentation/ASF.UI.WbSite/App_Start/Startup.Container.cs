@@ -23,8 +23,8 @@ using ASF.Framework.Localization.Kernel.Data.UnitOfWork;
 using ASF.Framework.Services;
 using ASF.Framework.Localization.Kernel.Interfaces.Services;
 using ASF.Framework.Localization.Kernel.Interfaces.Services.UnitOfWork;
-//using Microsoft.Owin.Security.Google;
-//using Microsoft.Owin.Security.Facebook;
+using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Facebook;
 
 namespace ASF.UI.WbSite
 {
@@ -74,9 +74,9 @@ namespace ASF.UI.WbSite
             ////////////////////////////////////////////
 
             ///////////login con facebook///////////////
-            //app.UseFacebookAuthentication(
-            //    appId: "1475221132592507",
-            //    appSecret: "8054de603c9699a87bb784f1412d742f");
+            app.UseFacebookAuthentication(
+                appId: "1475221132592507",
+                appSecret: "8054de603c9699a87bb784f1412d742f");
             ////////////////////////////////////////////
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.

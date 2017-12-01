@@ -549,7 +549,7 @@
     </Content>
     <None Include="Content\Site.less" />
     <Content Include="humans.txt" />
-    <Content Include="img_product\Campera.jpg" />
+    <Content Include="img_product\CamperaXM.jpg" />
     <Content Include="img_product\CamperaAdidasMujer.jpg" />
     <Content Include="img_product\CamperaAdidasZNE.jpg" />
     <Content Include="img_product\CamperaEcoCuero.jpg" />

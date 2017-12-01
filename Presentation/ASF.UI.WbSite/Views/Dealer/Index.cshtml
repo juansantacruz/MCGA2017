@@ -6,10 +6,16 @@
 <div id="main" class="container body-content" role="main">
     <br /><br /><br /><br /><br /><br />
 </div>
-<h2>Index</h2>
+<h2>Dealer</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create dealer", "Create")
+    <div class="col-sm-1">
+        @Html.ActionLink("Country", "Index", "Country", null, new { @class = "btn" })
+    </div>
+    <div class="col-sm-1">
+        @Html.ActionLink("Category", "Index", "Category", null, new { @class = "btn" })
+    </div>
 </p>
 <table class="table">
     <tr>
