@@ -17,6 +17,316 @@
 <div id="main" class="container body-content" role="main">
     <br /><br /><br /><br /><br /><br />
 </div>
-<h2>Compra finalizada</h2>
+
+
+
+
+<style type="text/css">
+    .panel .panel-heading a {
+        color: white;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a href="~/Cart/mostrarCarrito">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">My cart items</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="~/Cart/mostrarCarrito">
+                <div class="panel-footer">
+                    <span class="pull-left">My cart items</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a href="~/Product/Index">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-list fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">Products</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <a href="~/Product/Index">
+                <div class="panel-footer">
+                    <span class="pull-left">Product list</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+@**@
+
+
+
+
+@**@
+<html lang="es">
+<head>
+    <title>.:: Interlands - Simulador de Pagos ::. </title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/layout.css?version=20171220" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css?version=20171220" media="screen">
+    <link rel="stylesheet" type="text/css" href="/frontend/content/sass/pages/cart.css?version=20171220" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css?version=20171220" media="screen">
+    <link href="/css/bootstrap.css?version=20171220" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/frontend/content/sass/modules/header-footer.css?version=20171220" media="screen">
+    <link rel="stylesheet" type="text/css" href="/frontend/content/sass/materialdesignicons.css?version=20171220" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <script type="text/javascript" src="/js/lib/jquery-1.11.3.min.js?version=20171220"></script>
+    <script type="text/javascript" src="/js/lib/jquery-ui.min.js?version=20171220"></script>
+    <script type="text/javascript" src="/js/lib/bootstrap.min.js?version=20171220"></script>
+    <script type="text/javascript" src="/js/util/common_helpers.js?version=20171220"></script>
+    <script type="text/javascript" src="/frontend/js/shared/loading.js?version=20171220"></script>
+
+    <script type="text/javascript">
+      var _WS_URI = "ws://ec2-52-4-147-138.compute-1.amazonaws.com:8080";
+      var session_id = "munna7k9iec7n3a8ao13nuqav5";
+                var user_logged_in = 0;
+          var user_logged_data = {};
+      ;
+      _config = {};
+      _config.urls = {};
+      _config.global_events = {};
+      _config.urls.home = '/';
+      _config.urls.logout = '/ycix/logout';
+      _config.urls.logged = '/logged';
+      _config.urls.customMap = '/custom/map';
+      _config.urls.isAlive = '/ycix/touch';
+      _config.urls.timeout = '/timeout';
+      _config.urls.dailyMessage = '/daily/message';
+      _config.urls.userStatus = '/user_status';
+    </script>
+    <script type="text/javascript" src="/js/util/string_functions.js?version=20171220"></script>
+    <script src="/js/pages/pay_simulator.js?version=20171220"></script>
+
+</head>
+<body>
+    <div id="wrapper" class="fa-lightbulb-o">
+       
+
+        <div id="wrapper-content">
+            <div id="content" class="body-content">
+                                </div><!-- .main-content -->
+                <div class="right-content">
+                    <div class="alert-warning">
+                        <h3 class="label label-primary">Condiciones de Financiación </h3>
+                        <form id="main_filter" action="/simulador/pay_simulator_right" method="POST">
+                            <input type="hidden" name="params[more]" value="0">
+                            <div class="filters-term">
+                                <ul>
+                                    <li>
+                                        
+                                        <label>Elegir ente Financiero</label>
+                                        <select name="params[collector]">
+                                            <option value="0">Ente financiero</option>
+                                            <option value="MP">MercadoPago</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label>Elegir Tarjeta</label>
+                                        <select name="params[card]">
+                                            <option value="0">Tarjeta</option>
+                                            <option value="9">American Express</option>
+                                            <option value="10">Argencard</option>
+                                            <option value="6">CABAL</option>
+                                            <option value="4">Cencosud</option>
+                                            <option value="14">CMR</option>
+                                            <option value="13">Cordobesa</option>
+                                            <option value="5">Diners</option>
+                                            <option value="3">Mastercard</option>
+                                            <option value="18">Mercado Pago + Banco Patagonia</option>
+                                            <option value="11">Naranja</option>
+                                            <option value="12">Nativa Mastercard</option>
+                                            <option value="17">Tarjeta Shopping</option>
+                                            <option value="19">Tarjeta Walmart</option>
+                                            <option value="1">Visa</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label>Elegir Banco</label>
+                                        <select name="params[bank]">
+                                            <option value="0">Cuál es tu banco</option>
+                                            <option value="48">American Express</option>
+                                            <option value="54">Argencard S.A.</option>
+                                            <option value="69">Banco Bica</option>
+                                            <option value="10">Banco Ciudad</option>
+                                            <option value="74">Banco Columbia</option>
+                                            <option value="18">Banco Comafi</option>
+                                            <option value="68">Banco de Chaco</option>
+                                            <option value="80">Banco de Chubut</option>
+                                            <option value="72">Banco de Comercio</option>
+                                            <option value="29">Banco de la Pampa</option>
+                                            <option value="2">Banco Galicia</option>
+                                            <option value="5">Banco Hipotecario</option>
+                                            <option value="43">Banco Industrial</option>
+                                            <option value="81">Banco Municipal</option>
+                                            <option value="42">Banco Nacion</option>
+                                            <option value="1">Banco Patagonia</option>
+                                            <option value="3">Banco Provincia</option>
+                                            <option value="78">Banco Saenz</option>
+                                            <option value="25">Banco San Juan</option>
+                                            <option value="24">Banco Santa Cruz</option>
+                                            <option value="40">Banco Santander Rio S.A.</option>
+                                            <option value="62">Banco Supervielle</option>
+                                            <option value="8">BBVA Frances</option>
+                                            <option value="28">CABAL</option>
+                                            <option value="87">Carta Automática</option>
+                                            <option value="17">Cencosud</option>
+                                            <option value="61">Citi</option>
+                                            <option value="58">Cmr</option>
+                                            <option value="57">Cordobesa</option>
+                                            <option value="31">DINERS</option>
+                                            <option value="47">Emitida por American Express</option>
+                                            <option value="76">Fueguina</option>
+                                            <option value="13">HSBC</option>
+                                            <option value="12">ICBC</option>
+                                            <option value="9">Itau</option>
+                                            <option value="45">Macro</option>
+                                            <option value="53">Mastercard</option>
+                                            <option value="67">Mercado Pago + Banco Patagonia</option>
+                                            <option value="55">Naranja</option>
+                                            <option value="56">Nativa Mastercard</option>
+                                            <option value="37">NUEVO BANCO DE ENTRE RIOS</option>
+                                            <option value="41">Nuevo Banco de Santa Fe</option>
+                                            <option value="14">Provencred</option>
+                                            <option value="15">Tarjeta Shopping</option>
+                                            <option value="86">Tarjeta Walmart</option>
+                                            <option value="63">Tucuman</option>
+                                            <option value="44">Visa Argentina S.A.</option>
+                                            <option value="85">Visa Smart Time</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label>Elegir Cuotas</label>
+                                        <select name="params[quotas]">
+                                            <option value="0">¿En cuántas cuotas?</option>
+                                            <option value="1">1</option>
+                                            <option value="3">3</option>
+                                            <option value="6">6</option>
+                                            <option value="9">9</option>
+                                            <option value="12">12</option>
+                                            <option value="18">18</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div><!--.filters-term  -->
+                        </form>
+                        
+                    </div><!-- .blue-box .box-add -->
+                </div><!-- .right-content-->
+            <div class="alert-dismissible">
+                <div class="alert-danger">
+                    <h1 class="label label-success" >Para completar la compra ingrese sus datos por favor.</h1>
+
+                    <form id="item-form" action="/simulador/item-simulate">
+                        <div class="content-pay-option">
+
+                            <ul>
+                                
+                                <li class="ammount">
+                                    <label>Nombre</label>
+                                    <input type="text" name="amount">
+                                </li>
+                                <li class="dropdown">
+                                    <label>Fecha de expiracion</label>
+                                    <input type="date" name="amount">
+                                </li>
+                                <li class="ammount">
+                                    <label>Calle y numero</label>
+                                    <input type="text" name="amount">
+                                </li>
+                                <li class="ammount">
+                                    <label>Numero de tarjeta</label>
+                                    <input type="number" name="amount">
+                                </li>
+                                <li class="ammount">
+                                    <label>Codigo de seguridad</label>
+                                    <input type="text" name="amount">
+                                </li>
+                                <li class="ammount">
+                                    <label>Codigo postal</label>
+                                    <input type="number" name="amount">
+                                </li>
+
+                            </ul>
+                        </div>
+                    </form>
+                    <form id="simulator_form" class="simulator_form" action="/simulador/simulate"></form>
+                </div>
+            </div>
+            </div><!-- #content .internas -->
+        </div>
+
+       
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69917051-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="/js/6eb8fb0.js?version=20171220"></script>
+
+</body>
+</html>
+
+
+@**@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-4" style="float:right">
+        @Html.ActionLink("Buy", "finalizarCompra", "Cart", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+
+
+
+<h2 class="label-success">Gracias!</h2>
 
 @Html.ActionLink("Go to home", "Index", "Home")

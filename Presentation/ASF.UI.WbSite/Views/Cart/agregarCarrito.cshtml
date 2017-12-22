@@ -16,25 +16,85 @@
 <div id="main" class="container body-content" role="main">
     <br /><br /><br /><br /><br /><br />
 </div>
+
+<style type="text/css">
+    .panel .panel-heading a {
+        color: white;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a href="~/Cart/mostrarCarrito">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">My cart items</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="~/Cart/mostrarCarrito">
+                <div class="panel-footer">
+                    <span class="pull-left">My cart items</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a href="~/Product/Index">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-list fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">Products</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <a href="~/Product/Index">
+                <div class="panel-footer">
+                    <span class="pull-left">Product list</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+@**@
 <h2>Cart item</h2><br />
 <p>
     @*@Html.ActionLink("Create New", "Create")*@
 </p>
-<table class="table">
-    <tr>
+<table class="table" >
+    <tr >
         @*<th>
                 @Html.DisplayName("Cart Id")
             </th>
             <th>
                 @Html.DisplayName("Product Id")
             </th>*@
-        <th>
+        <th class="alert-warning">
             @Html.DisplayName("Title")
         </th>
-        <th>
+        <th class="alert-danger">
             @Html.DisplayName("Quantity")
         </th>
-        <th>
+        <th class="alert-info">
             @Html.DisplayName("Price")
         </th>
         @*<th>
@@ -59,20 +119,20 @@
         foreach (var item in Session["Carrito"] as List<ASF.Entities.CartItemDTO>)
         {
             total += (double)(item.Price * item.Quantity);
-            <tr>
+            <tr >
                 @*<td>
                          @Html.DisplayFor(modelItem => item.CartId)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ProductId)
                     </td>*@
-                <td>
+                <td class="bg-warning" style="border:dashed" >
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
-                <td>
+                <td class="alert-danger" style="border-style:solid">
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
-                <td>
+                <td class="alert-info" style="border-style:solid">
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 @*<td>
@@ -106,7 +166,7 @@
                 <td>
                     @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
                         @Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+                  @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }
