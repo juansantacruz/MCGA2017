@@ -17,7 +17,7 @@ namespace ASF.UI.WbSite.Controllers
             return View(Session["Carrito"]);
         }
 
-    public ActionResult agregarCarrito(int id)
+        public ActionResult agregarCarrito(int id)
         {
             var producto = new ProductProcess().findProduct(id);
 
@@ -101,20 +101,13 @@ namespace ASF.UI.WbSite.Controllers
             return View();
         }
 
-        // POST: Cart/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+        [HttpPost]
+        public ActionResult ChangeQuantity(int id, int quantity)
+        {
+            List<CartItemDTO> cartItem = (List<CartItemDTO>)Session["Carrito"];
+            cartItem.Where(x => x.ProductId == id).First().Quantity = quantity;
+            return RedirectToAction("mostrarCarrito");
         }
 
         // GET: Cart/Delete/5

@@ -2,18 +2,15 @@
 @{
     ViewBag.Title = "Cart item";
 }
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110530097-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-110530097-1');
+    gtag('config', 'UA-110530097-1');
 </script>
-
-
 
 @*@Html.Partial("_Espacio1")*@
 <div id="main" class="container body-content" role="main">
@@ -79,6 +76,22 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 @*<td>
+                        <input type="number" id="itemReQuantity" name="cantidad" />
+                        @Url.Action("Edit", "CartController", new { item = item.Id });
+
+                        @Html.ActionLink("ConfirmarCantidad", "Index", "Product")
+                    </td>*@
+
+                <td>
+                    @using (Html.BeginForm("ChangeQuantity", "Cart", FormMethod.Post))
+                    {
+                        <input type="number" id="quantity" name="quantity" />
+                        <input type="number" name="id" id="id" style="display:none" value=@item.ProductId />
+
+                        <input type="submit" value="Cambiar Cantidad" />
+                    }
+                </td>
+                @*<td>
                         @Html.DisplayFor(modelItem => item.CreatedOn)
                     </td>
                     <td>
@@ -110,9 +123,9 @@
     }
 </table>
 @Html.ActionLink("Go to product list", "Index", "Product")
-        <div class="row">
-                <div class="col-lg-4" style="float:right">
-                           @Html.ActionLink("Buy cart", "finalizarCompra", "Cart", null, new { @class = "btn btn-primary" })       
-    </div>   
+<div class="row">
+    <div class="col-lg-4" style="float:right">
+        @Html.ActionLink("Buy cart", "finalizarCompra", "Cart", null, new { @class = "btn btn-primary" })
+    </div>
 </div>
 @*@Html.Partial("_Espacio2")*@
